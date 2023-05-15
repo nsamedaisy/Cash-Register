@@ -14,6 +14,9 @@
 //   ["ONE HUNDRED", 100]
 // ]
 
+change.addEventListener('submit', () => {
+  
+})
 
 function checkCashRegister(price, cash, cid) {
   const INSUFFICIENT_FUNDS = {status: 'INSUFFICIENT_FUNDS', change: []}
@@ -26,7 +29,6 @@ function checkCashRegister(price, cash, cid) {
   let change = []
   let changeDue = cash - price
   let mult = 0
-
 
   if (changeDue >= 20) {
     while (changeDue >= 20 && cid[7][1] >= 20){
@@ -60,7 +62,6 @@ function checkCashRegister(price, cash, cid) {
     mult = 0
   }
 
-
   if (changeDue >= 1) {
     while (changeDue >= 1 && cid[4][1] >= 1){
       changeDue -= 1
@@ -71,7 +72,6 @@ function checkCashRegister(price, cash, cid) {
     mult = 0
   }
 
-
   if (changeDue >= 0.25) {
     while (changeDue >= 0.25 && cid[3][1] >= 0.25){
       changeDue -= 0.25
@@ -81,7 +81,6 @@ function checkCashRegister(price, cash, cid) {
     change.push(['QUARTER', (0.25 * mult)])
     mult = 0
   }
-
 
   if (changeDue >= 0.1) {
     while (changeDue >= 0.1 && cid[2][1] >= 0.1){
@@ -142,7 +141,6 @@ else {
 }
 
 console.log(change)
- 
 }
 
 
