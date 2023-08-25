@@ -26,7 +26,7 @@ balanceButton.addEventListener('click', () => {
     ['FIVE', +five.dataset.value],
     ['TEN', +ten.dataset.value],
     ['TWENTY', +twenty.dataset.value],
-    ['ONE HUNDRED', 100],
+    ['ONE HUNDRED', 100]
   ]
 
   const result = checkCashRegister(billAmount, cashAmount, cid)
@@ -61,7 +61,7 @@ balanceButton.addEventListener('click', () => {
   }
 })
 
-function checkCashRegister(billAmount, cashAmount, cid) {
+function checkCashRegister (billAmount, cashAmount, cid) {
   const INSUFFICIENT_FUNDS = { status: 'INSUFFICIENT_FUNDS', change: [] }
 
   const CLOSED = { status: 'CLOSED', change: cid }
@@ -72,7 +72,7 @@ function checkCashRegister(billAmount, cashAmount, cid) {
   let changeDue = cashAmount - billAmount
   let mult = 0
   let penny = 0
-  let changeArr = []
+  const changeArr = []
 
   if (changeDue >= 20) {
     while (changeDue >= 20 && cid[7][1] >= 20) {
@@ -144,14 +144,14 @@ function checkCashRegister(billAmount, cashAmount, cid) {
       mult += 1
     }
 
-    if (0 < changeDue && changeDue <= 0.01 && cid[0][1] >= 0.01) {
+    if (0 <= changeDue && changeDue <= 0.01 && cid[0][1] >= 0.01) {
       penny = 0.01
     }
     changeArr.push(['PENNY', 0.01 * mult + penny])
     mult = 0
   }
 
-  let changeTotal = changeArr.reduce((acc, curr) => acc + curr[1], 0)
+  const changeTotal = changeArr.reduce((acc, curr) => acc + curr[1], 0)
 
   if (changeTotal < cashAmount - billAmount) {
     return INSUFFICIENT_FUNDS
