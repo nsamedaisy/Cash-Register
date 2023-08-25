@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project-Starter</title>
+<head>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Cash Register</title>
 </head>
+
 <body>
-    <h1>Project-Starter</h1>
-    <script src="./script.js"></script>
+  <div class="container">
+    <h1> <span>Ca</span>sh<span> Re</span>gi<span>st</span>er</h1>
+
+    <table>
+      <tc>
+        <th>Penny</th>
+        <th>Nickel</th>
+        <th>Dime</th>
+        <th>Quarter</th>
+        <th>One</th>
+        <th>Five</th>
+        <th>Ten</th>
+        <th>Twenty</th>
+      </tc>
+      <tr class="cash-list">
+        <td id="penny" data-value="1.01">1.01</td>
+        <td id="nickel" data-value="2.05">2.05</td>
+        <td id="dime" data-value="3.1">3.1</td>
+        <td id="quarter" data-value="4.25">4.25</td>
+        <td id="one" data-value="90">90</td>
+        <td id="five" data-value="55">55</td>
+        <td id="ten" data-value="20">20</td>
+        <td id="twenty" data-value="60">60</td>
+      </tr>
+    </table>
+
+    <div class="input">
+      <div class="bill">
+        <label for="bill-amount"><span>Bill</span>:</label>
+        <input type="text" name="bill-amount" id="bill-amount" placeholder="0.0" required>
+      </div>
+      <div class="cash">
+        <label for="cash-amount"><span>Cash</span>:</label>
+        <input type="text" name="cash-amount" id="cash-amount" placeholder="0.0" required>
+      </div>
+
+      <button id="balance" type="submit">Refund Change</button>
+
+      <div id="status-message"></div>
+      <ul id="change-list"></ul>
+    </div>
+
+  </div>
+  <script src="./script.js"></script>
 </body>
+
 </html>
