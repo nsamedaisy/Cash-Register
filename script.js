@@ -144,7 +144,7 @@ function checkCashRegister (billAmount, cashAmount, cid) {
       mult += 1
     }
 
-    if (0 <= changeDue && changeDue <= 0.01 && cid[0][1] >= 0.01) {
+    if (changeDue >= 0 && changeDue <= 0.01 && cid[0][1] >= 0.01) {
       penny = 0.01
     }
     changeArr.push(['PENNY', 0.01 * mult + penny])
@@ -164,6 +164,6 @@ function checkCashRegister (billAmount, cashAmount, cid) {
   if (changeTotal === cidTotal) {
     return CLOSED
   } else {
-    return { status: 'OPEN', change: changeArr.reverse() }
+    return { status: 'OPEN', change: changeArr.reverse(), OPEN }
   }
 }
