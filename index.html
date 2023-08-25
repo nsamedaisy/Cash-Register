@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
+<head>
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Cash Register</title>
 </head>
+
 <body>
   <div class="container">
-    <section class="content">
-      <h1>Cash Register</h1>
-      <p>Enter the bill amount and cas given by the customer and know minimum number of notes to return</p>
-    </section>
-		<form id="bill-form">
+    <h1>Cash Register</h1>
 
-			<div class="form-group">
-				<label for="bill-amount">Bill Amount</label>
-				<input type="text" name="bill-amount" id="bill-amount" placeholder="0.0" required>
-			</div>
+    <table>
+      <tc>
+        <th>Penny</th>
+        <th>Nickel</th>
+        <th>Dime</th>
+        <th>Quarter</th>
+        <th>One</th>
+        <th>Five</th>
+        <th>Ten</th>
+        <th>Twenty</th>
+      </tc>
+      <tr class="cash-list">
+        <td id="penny" data-value="1.01">1.01</td>
+        <td id="nickel" data-value="2.05">2.05</td>
+        <td id="dime" data-value="3.1">3.1</td>
+        <td id="quarter" data-value="4.25">4.25</td>
+        <td id="one" data-value="90">90</td>
+        <td id="five" data-value="55">55</td>
+        <td id="ten" data-value="20">20</td>
+        <td id="twenty" data-value="60">60</td>
+      </tr>
+  </table>
 
-			<div class="form-group">
-				<label for="cash-amount">Cash Given</label>
-				<input type="text" name="cash-amount" id="cash-amount" placeholder="0.0" required>
-			</div>
+    <div class="input">
+      <div class="bill">
+        <label for="bill-amount">Bill :</label>
+        <input type="text" name="bill-amount" id="bill-amount" placeholder="0.0" required>
+      </div>
+      <div class="cash">
+        <label for="cash-amount">Cash :</label>
+        <input type="text" name="cash-amount" id="cash-amount" placeholder="0.0" required>
+      </div>
 
-			<div class="form-group">
-		        <h2>Return Change</h2>
-				<button id="balance" type="submit">Change</button>
-			</div>
+      <button id="balance" type="submit">Refund Change</button>
 
-		</form>
+      <div id="status-message"></div>
+      <ul id="change-list"></ul>
+    </div>
+
+    
 
   </div>
-<script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
+
 </html>
